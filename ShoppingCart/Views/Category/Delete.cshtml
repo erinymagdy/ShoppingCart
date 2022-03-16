@@ -1,0 +1,43 @@
+﻿@using Domain.Models;
+@model Category
+
+@{
+    ViewData["Title"] = "Delete";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Delete</h1>
+
+<h3>Are you sure you want to delete this?</h3>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Delete">
+            <dl class="row">
+                <dt class="col-4">
+                    @Html.DisplayNameFor(model => model.NameEn)
+                </dt>
+                <dd class="col-6">
+                    @Html.DisplayFor(model => model.NameEn)
+                </dd>
+                <dt class="col-4">
+                    @Html.DisplayNameFor(model => model.NameAr)
+                </dt>
+                <dd class="col-6">
+                    @Html.DisplayFor(model => model.NameAr)
+                </dd>
+            </dl>
+            <div class="form-group">
+                <button type="submit" value="Delete" class="btn btn-primary">Delete</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
